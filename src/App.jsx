@@ -7,6 +7,8 @@ import MainPage from './component/page/MainPage';
 import PostWritePage from './component/page/PostWritePage';
 import PostViewPage from './component/page/PostViewPage';
 
+const { PUBLIC_URL } = process.env;
+
 const MainTitleText = styled.p`
 	font-size: 24px;
 	font-weight: bold;
@@ -15,7 +17,7 @@ const MainTitleText = styled.p`
 
 const App = (props) => {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename={PUBLIC_URL}>
 			<MainTitleText>시은이의 미니 블로그</MainTitleText>
 			<Routes>
 				<Route index element={<MainPage />} />
